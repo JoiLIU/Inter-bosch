@@ -1,0 +1,20 @@
+Key Contribution:
+
+    Proposed a deep outlier detection framework named Transformation Invariant Autoencoder (TIAE) – simple but effective
+    Derive an adaptive self-paced learning algorithm without extra hyper-parameters. – mitigate the negative effect of outliers in the process of feature learning.
+
+Framwork
+
+Transformations
+
+    Spatial transformation(crop, resize..), appearance transformation(color dropping, brightness..)
+
+    Transformations group is far better than single transformation
+
+    Should erase specific information, much shared among inliers, little shared among outliers.
+
+Model Architectures
+
+Adaptive self-paced learning
+
+‒Its core idea is to generally start with learning easier aspects of a task, then gradually consider more complex examples
