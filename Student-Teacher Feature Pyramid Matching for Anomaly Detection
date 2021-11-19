@@ -1,0 +1,51 @@
+Paper download link: https://arxiv.org/pdf/2103.04257.pdf
+Abstract
+
+Anomaly detection is a challenging task and usually formulated as an one-class learning problem for the unexpectedness of anomalies. This paper proposes a simple yet powerful approach to this issue, which is implemented in the student-teacher framework for its advantages but substantially extends it in terms of both accuracy and efficiency.
+
+Key contribution:
+
+Proposed a student-teacher feature pyramid network for anomaly detection.
+
+A strong model pretrained on image classification as the teacher,  distill the knowledge into a single student network with the identical architecture to learn the distribution of anomaly-free images and this one-step transfer preserves the crucial clues as much as possible.
+
+
+ Method
+
+framework
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-22-32.png]
+
+Training Process
+
+simply assume that all image regions are anomaly-free in the training set.
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-27-5.png]
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-27-22.png]
+
+the total loss is the weighted average of the loss at different pyramid scale
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-27-32.png]
+
+Test Process
+
+Aim to obtain an anomaly map Ω,The resulting anomaly map is defined as the element-wise product of L equal-sized upsampled anomaly maps.
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-27-58.png]
+
+Result
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-31-51.png]
+
+
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-32-18.png]
+
+Ablation study
+
+Obviously, the features from the student and teacher on normal regions distribute closer (even overlapped) than the ones on anomalous regions. It suggests that the student learns to match the teacher’s output on normal images. It also shows that the student well captures the distribution of
+
+normal patterns under the supervision of a good teacherd.
+
+[VAAS: Vision Assisted Automation System > Student-Teacher Feature Pyramid Matching for Anomaly Detection > image2021-11-19_17-34-11.png] 
